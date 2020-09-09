@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 export const App = () => {
-  const onBlur = () => {
+  const onBlur = (e: any) => {
+    e.persist();
+    console.log(e);
     console.log("blur");
   };
 
@@ -13,6 +15,7 @@ export const App = () => {
   return (
     <AppCotainer>
       <input onChange={onChange} onBlur={onBlur} type="text" />
+      <button>text</button>
     </AppCotainer>
   );
 };
